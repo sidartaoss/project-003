@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: project001
+spec:
+  selector:
+    matchLabels:
+      app: project001
+  replicas: 1
+  template: # template for the pods
+    metadata:
+      labels:
+        app: project001
+    spec:
+      containers:
+      - name: project001
+        image: sidartasilva/project001:latest
